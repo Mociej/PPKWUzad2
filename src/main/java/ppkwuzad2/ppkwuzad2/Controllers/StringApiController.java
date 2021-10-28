@@ -9,7 +9,12 @@ public class StringApiController {
 
     @GetMapping("analysestring/{inputstring}")
     public String stringAnalyse(@PathVariable String inputstring) {
-        String result = "String length : " + inputstring.length() + "<br/>";
+        String result ="";
+
+        result += "Input string  : " + inputstring + "<br/>";
+        result += "<br/>";
+        result += "String length : " + inputstring.length() + "<br/>";
+
         int upperCase = 0;
         int lowerCase = 0;
         int digits = 0;
@@ -31,8 +36,8 @@ public class StringApiController {
         }
 
         int countWords = 0;
-
         char ch[] = new char[inputstring.length()];
+
         for (int i = 0; i < inputstring.length(); i++) {
             ch[i] = inputstring.charAt(i);
             if (((i > 0) && (ch[i] != ' ') && (ch[i - 1] == ' ')) || ((ch[0] != ' ') && (i == 0)))
@@ -45,7 +50,7 @@ public class StringApiController {
         result += "whitespaces  : " + wspaces + "<br/>";
         result += "special characters  : " + other + "<br/>";
         result += "words in string  : " + countWords + "<br/>";
+
         return result;
     }
-
 }
