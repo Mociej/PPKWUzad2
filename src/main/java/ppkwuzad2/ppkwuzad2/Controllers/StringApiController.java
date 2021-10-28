@@ -21,19 +21,31 @@ public class StringApiController {
                 upperCase++;
             else if (Character.isLowerCase(inputstring.charAt(i)))
                 lowerCase++;
-            else if(Character.isDigit(inputstring.charAt(i)))
+            else if (Character.isDigit(inputstring.charAt(i)))
                 digits++;
-            else if(Character.isWhitespace(inputstring.charAt(i)))
+            else if (Character.isWhitespace(inputstring.charAt(i)))
                 wspaces++;
             else
                 other++;
 
         }
+
+        int countWords = 0;
+
+        char ch[] = new char[inputstring.length()];
+        for (int i = 0; i < inputstring.length(); i++) {
+            ch[i] = inputstring.charAt(i);
+            if (((i > 0) && (ch[i] != ' ') && (ch[i - 1] == ' ')) || ((ch[0] != ' ') && (i == 0)))
+                countWords++;
+        }
+
         result += "upperCase  : " + upperCase + "<br/>";
         result += "lowerCase  : " + lowerCase + "<br/>";
         result += "digits  : " + digits + "<br/>";
         result += "whitespaces  : " + wspaces + "<br/>";
         result += "special characters  : " + other + "<br/>";
+        result += "words in string  : " + countWords + "<br/>";
         return result;
     }
+
 }
