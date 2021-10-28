@@ -13,7 +13,7 @@ temat występowania dużych i małych liter, liczb, białych znaków, znaków sp
 Po uruchomieniu aplikacji i wpisaniu w przeglądarkę np. `http://localhost:8080/analysestring/ala MA 123!@` uzyskamy 
 odpowiedź w zawierającą statystykę stringa.
 
-
+![obraz](example.png)
 
 Input string : ala MA 123!@ </br>
 
